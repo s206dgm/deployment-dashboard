@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+}
+
+.app {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  margin-top: 50px; /* Adjusted to match header height */
+}
+
+.main-content .device-table {
+  margin-left: 250px; /* Adjusted to match sidebar width */
+  padding: 20px;
+  width: calc(100% - 250px);
+}
+
+.device-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.device-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.device-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.device-table th, .device-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.device-table th {
+  background-color: #f1f1f1;
+}
