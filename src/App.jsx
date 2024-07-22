@@ -2,51 +2,30 @@ import React from 'react';
 import './App.css';
 import Sidebar from './Sidebar';
 import Header from './Header';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import BOMsOverview from './BOMsOverview';
+import BOMsOverviewView from './BOMsOverviewView';
+import BOMsOverviewEdit from './BOMsOverviewEdit';
+import BOMsOverviewAdd from './BOMsOverviewAdd';
 
 const App = () => {
   return (
-    <div className="app">
-      <Header />
-      <Sidebar />
-      <main className="main-content">
-        <div className="device-table">
-          <div className="device-table-header">
-            <div>Devices</div>
-            <button>Connect a Device</button>
-          </div>
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Configuration</th>
-                <th>Labels</th>
-                <th>Type</th>
-                <th>Status</th>
-                <th>Hardware</th>
-                <th>Hash rate</th>
-                <th>Temperature</th>
-                <th>Power usage</th>
-                <th>Last seen</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mining01</td>
-                <td>Custom configuration</td>
-                <td>Home</td>
-                <td>Running</td>
-                <td>---</td>
-                <td>25.04 g/s</td>
-                <td>69°C</td>
-                <td>1.01 kW</td>
-                <td>1 minute ago</td>
-              </tr>
-              {/* Add more rows as needed */}
-            </tbody>
-          </table>
-        </div>
-      </main>
-    </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <Sidebar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<div>Welcome to the Home Page</div>} />
+            <Route path="/boms-overview" element={<BOMsOverview />} />
+            <Route path="/boms-overview-view" element={<BOMsOverviewView />} />
+            <Route path="/boms-overview-edit" element={<BOMsOverviewEdit />} />
+            <Route path="/boms-overview-add" element={<BOMsOverviewAdd />} />
+            {/* Add more routes as needed */}
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 };
 

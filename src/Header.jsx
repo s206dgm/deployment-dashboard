@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faSearch, faPlaneDeparture } from '@fortawesome/free-solid-svg-icons';
 import SettingsMenu from './SettingsMenu';
 
 const Header = () => {
@@ -35,7 +35,10 @@ const Header = () => {
 
   return (
     <header className="header">
-      <div className="logo">Rykai Miner</div>
+      <div className="logo">
+        <FontAwesomeIcon icon={faPlaneDeparture} className="logo-icon" />
+        <strong>PLx Deployments</strong>
+      </div>
       <div className="header-icons">
         <div className={`search-container ${searchActive ? 'active' : ''}`}>
           <FontAwesomeIcon icon={faSearch} className="search-icon" onClick={toggleSearch} />

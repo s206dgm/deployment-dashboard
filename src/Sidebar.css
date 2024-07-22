@@ -1,71 +1,110 @@
 .sidebar {
-    background-color: #f8f9fa;
-    width: 250px;
-    padding-top: 0;
-    position: fixed;
-    height: 100%;
-    top: 50px; /* Adjusted to match header height */
-    z-index: 1;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .sidebar li {
-    padding: 15px 20px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background-color 0.3s ease;
-  }
-  
-  .sidebar li:hover {
-    background-color: #e9ecef;
-  }
-  
-  .sidebar li span {
-    margin-left: 10px; /* Move the text closer to the icon */
-    flex-grow: 1;
-    text-align: left;
-  }
-  
-  .home {
-    margin-top: 10px;
-  }
-  
-  hr {
-    margin: 10px 0;
-    border: none;
-    border-top: 1px solid #ccc;
-  }
-  
-  .dropdown {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-  }
-  
-  .dropdown.active {
-    max-height: 500px; /* Adjust based on your content's height */
-  }
-  
-  .dropdown li {
-    padding: 10px 0;
-    padding-left: 40px; /* Indent to align with category type */
-  }
-  
-  .dropdown li span {
-    margin-left: 15px; /* Remove additional margin for dropdown items */
-  }
-  
-  .chevron {
-    transition: transform 0.3s ease;
-  }
-  
+  background-color: #f8f9fa;
+  width: 250px; /* Ensure the sidebar is 250px wide */
+  padding-top: 0;
+  position: fixed;
+  height: 100%;
+  top: 50px; /* Adjusted to match header height */
+  z-index: 1;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: black; /* Default color */
+  display: block; /* Ensure li covers full width */
+  width: 100%; /* Ensure li covers full width */
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+.sidebar li a {
+  display: block; /* Make the link a block element */
+  width: 100%; /* Full width */
+  padding: 15px 20px; /* Add padding to the link */
+  color: inherit; /* Ensure links inherit the color from li */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+.sidebar li:hover a {
+  background-color: #e9ecef;
+}
+
+.sidebar li.selected a {
+  background-color: #E6E6FA; /* Highlight color for selected items, can be overridden */
+  color: black; /* Text color for selected item */
+}
+
+.sidebar li.home.selected a {
+  background-color: inherit; /* Remove highlight color for home */
+  color: inherit; /* Ensure text color is inherited */
+}
+
+.sidebar li span {
+  margin-left: 10px; /* Move the text closer to the icon */
+  flex-grow: 1;
+  text-align: left;
+  color: inherit; /* Ensure text inherits color */
+}
+
+.home {
+  margin-top: 10px;
+}
+
+hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.dropdown {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.dropdown.active {
+  max-height: 500px; /* Adjust based on your content's height */
+  opacity: 1;
+}
+
+.dropdown li {
+  padding-left: 0; /* Remove indent */
+  transform: translateY(-10px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  color: black; /* Ensure dropdown items are black */
+}
+
+.dropdown.active li {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.dropdown li a {
+  padding: 10px 20px; /* Adjust padding for dropdown links */
+  padding-left: 60px; /* Maintain alignment with category type */
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
+  margin-top: 5px; /* Add margin to move the Overview button down */
+}
+
+.chevron {
+  margin-right: 10px; /* Add some space after the chevron */
+  transition: transform 0.3s ease;
+}
+
+.boms-menu-item {
+  padding-top: 10px; /* Add padding to move BOMs menu item down */
+}

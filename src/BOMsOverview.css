@@ -1,0 +1,101 @@
+.boms-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Set height to 30vh */
+  padding: 20px;
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
+}
+
+.boms-table {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: auto;
+}
+
+.boms-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.boms-table-header div {
+  font-weight: bold; /* Bold the title */
+}
+
+.boms-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.boms-table th, .boms-table td {
+  padding: 15px;
+  text-align: center; /* Center the text in all table cells */
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd; /* Add separating lines between columns */
+}
+
+.boms-table th:first-child, .boms-table td:first-child {
+  border-left: 1px solid #ddd; /* Add border to the first column */
+}
+
+.boms-table th:last-child, .boms-table td:last-child {
+  border-right: 1px solid #ddd; /* Ensure the border on the last column */
+}
+
+.boms-table th {
+  background-color: #f1f1f1;
+}
+
+.icon-button {
+  margin: 0 15px; /* Add more space between icons */
+  cursor: pointer;
+  color: #5D3FD3; /* Set icon color */
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.icon-button:hover {
+  color: #3A1EA0; /* Change hover color as needed */
+}
+
+.icon-button .tooltip {
+  visibility: hidden;
+  width: 60px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%; /* Position above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.icon-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.add-bom-button {
+  background-color: transparent;
+  color: #5D3FD3;
+  border: none;
+  font-size: 20px; /* Adjust font size */
+  cursor: pointer;
+  position: relative;
+  outline: none; /* Remove default outline */
+}
+
+.add-bom-button:focus {
+  outline: none; /* Remove the focus outline */
+}
